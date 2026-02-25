@@ -327,9 +327,6 @@ def main():
         concurrency=args.concurrency,
         generation_kwargs={
             "temperature": 0.0,
-            "top_p": 0.95,
-            "top_k": 20,
-            "min_p": 0,
         },
         chat_template_kwargs={"enable_thinking": True},
         mode='mid',
@@ -431,7 +428,8 @@ def main():
             "task_id": task_id,
             "record_id": record_id,
             "user_id": user_id,
-            "overall_accuracy": avg_score,
+            "ori_accuracy": round(avg_score, 2),
+            "overall_accuracy": round(avg_score / 80 * 100, 2) ,
             "duration": duration,
             "total_tokens": total_output_tokens
         }, f, ensure_ascii=False, indent=2)
