@@ -44,8 +44,6 @@ pip install modelscope
 modelscope download --model OpenBMB/MiniCPM-SALA --local_dir ./models
 ```
 
-```
-
 
 
 ## 容器内挂载地址
