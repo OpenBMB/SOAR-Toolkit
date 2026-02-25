@@ -18,6 +18,20 @@ docker pull ghcr.io/openbmb/soar-toolkit:latest
 
 ## MiniCPM-SALA 模型下载
 
+### 方式一：通过 Hugging Face 下载
+在下载前，请先通过如下命令安装 Hugging Face 官方 CLI 工具。
+
+```plain&#x20;text
+pip install huggingface_hub
+```
+
+下载完整模型库到指定路径文件夹./models
+
+```plain&#x20;text
+huggingface-cli download OpenBMB/MiniCPM-SALA --local-dir ./models
+```
+
+### 方式二：通过 ModelScope 下载
 在下载前，请先通过如下命令安装 ModelScope。
 
 ```plain&#x20;text
@@ -28,6 +42,8 @@ pip install modelscope
 
 ```plain&#x20;text
 modelscope download --model OpenBMB/MiniCPM-SALA --local_dir ./models
+```
+
 ```
 
 
