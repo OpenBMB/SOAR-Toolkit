@@ -107,7 +107,7 @@ docker run -d \
 
 ## eval\_model.py
 
-下载地址：https://github.com/OpenBMB/SOAR-Toolkit/blob/main/eval\_model.py
+下载地址：https://github.com/OpenBMB/SOAR-Toolkit/blob/main/eval_model.py
 
 `eval_model.py` 会通过调用已启动的 SGLang 推理服务，根据不同评测任务类型，给出模型在正确性上的评测分数。首先需要启动 SGLang 服务，并传入模型所使用的api\_base：
 
@@ -139,7 +139,7 @@ python3 eval_model.py \
 
 ## bench\_serving.sh
 
-下载方式：https://github.com/OpenBMB/SOAR-Toolkit/blob/main/bench\_serving.sh
+下载方式：https://github.com/OpenBMB/SOAR-Toolkit/blob/main/bench_serving.sh
 
 本脚本使用 sglang 官方 bench\_serving 工具，在 3 档并发度下分别跑完所有评测请求，记录 Benchmark Duration。在对应档位传入数据集路径可以完成对应档位的测试，未输入数据集路径的可跳过该档位的测试，相关传参及说明对应如下：
 
