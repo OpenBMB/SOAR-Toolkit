@@ -1,3 +1,13 @@
+<div align="center">
+
+# SOAR-Toolkit
+
+<a href="README.md">中文</a> | <a href="README_EN.md">English</a>
+
+</div>
+
+---
+
 本次比赛围绕 OpenBMB MiniCPM-SALA 模型的推理性能优化展开。参赛者需在指定的硬件环境上基于官方提供的 MiniCPM-SALA 模型进行优化，不得提交或替换任何基座模型。为了方便各位参赛选手进行自测，我们提供了以下评测工具，帮助大家进行检验和合理规划。主要包括：
 
 # 基础镜像
