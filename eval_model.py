@@ -414,7 +414,8 @@ def main():
     with open(os.path.join(output_dir, "summary.txt"), "w", encoding="utf-8") as f:
         f.write(f"Model: {args.model_path}\n")
         f.write(f"Data: {args.data_path}\n")
-        f.write(f"Average Score: {avg_score:.2f}%\n")
+        f.write(f"Original Accuracy: {avg_score:.2f}%\n")
+        f.write(f"Normalized Accuracy: {round(avg_score / 80 * 100, 2)}%\n")
         f.write(f"Num Samples: {len(dataset)}\n")
         f.write(f"Total Duration: {duration:.2f} s\n")
         f.write(f"Total Output Tokens: {total_output_tokens}\n")
