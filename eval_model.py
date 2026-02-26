@@ -415,7 +415,7 @@ def main():
         f.write(f"Model: {args.model_path}\n")
         f.write(f"Data: {args.data_path}\n")
         f.write(f"Original Accuracy: {avg_score:.2f}%\n")
-        f.write(f"Normalized Accuracy: {round(avg_score / 80 * 100, 2)}%\n")
+        f.write(f"Normalized Accuracy: {min(round(avg_score / 80 * 100, 2), 100)}%\n")
         f.write(f"Num Samples: {len(dataset)}\n")
         f.write(f"Total Duration: {duration:.2f} s\n")
         f.write(f"Total Output Tokens: {total_output_tokens}\n")
@@ -430,7 +430,7 @@ def main():
             "record_id": record_id,
             "user_id": user_id,
             "ori_accuracy": round(avg_score, 2),
-            "overall_accuracy": round(avg_score / 80 * 100, 2) ,
+            "overall_accuracy": min(round(avg_score / 80 * 100, 2), 100),
             "duration": duration,
             "total_tokens": total_output_tokens
         }, f, ensure_ascii=False, indent=2)
