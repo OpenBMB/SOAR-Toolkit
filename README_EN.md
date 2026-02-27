@@ -177,6 +177,8 @@ bash prepare_model.sh --input <original model path> --output <processed model pa
 
 # Submission Demo
 
+Download Link: [demo-sala.tar.gz](demos/demo-sala.tar.gz)
+
 This directory is a minimal runnable submission example, demonstrating how to organize the `prepare_env.sh` + `prepare_model.sh` submission package according to platform requirements.
 
 ## Directory Structure
@@ -282,6 +284,8 @@ EAGLE3 uses a lightweight Draft Head to predict candidate tokens using the targe
   - `sgl-kernel/csrc/speculative/speculative_sampling.cu` — Sampling Kernel
 
 # Quantization Demo
+
+Download Link: [demo-quant.tar.gz](demos/demo-quant.tar.gz)
 
 ## Scope and Positioning
 This example provides a standard W4A16 quantization access reference link, using RTN strategy to verify the model's loadability and basic inference capability in the platform environment.
