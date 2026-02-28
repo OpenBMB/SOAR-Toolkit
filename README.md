@@ -52,10 +52,25 @@ modelscope download --model OpenBMB/MiniCPM-SALA --local_dir ./models
 ## 容器启动脚本参考
 
 ### docker run 常用参数
-*(暂时无法在飞书文档外展示此内容)*
+
+| 参数 | 作用 | 示例 |
+| :--- | :--- | :--- |
+| `--gpus` | 选择可见 GPU | `--gpus '"device=0"'` |
+| `-v <host>:<container>:ro` | 挂载目录/文件到容器（只读） | `-v /path/to/MiniCPM-SALA:/models/MiniCPM-SALA:ro` |
+| `-p <host_port>:<container_port>` | 端口映射 | `-p 30000:30000` |
+| `-e KEY=VALUE` | 传入环境变量（用于改启动参数） | `-e SGLANG_SERVER_ARGS='...'` |
+| `--name <name>` | 容器命名（便于 `docker logs`） | `--name minicpm_sglang` |
+| `-d` | 后台运行 | `-d` |
+| `--rm` | 容器退出后自动删除 | `--rm` |
 
 ### 环境变量
-*(暂时无法在飞书文档外展示此内容)*
+
+| 环境变量 | 默认值 | 含义 / 对应 `sglang.launch_server` | 示例 |
+| :--- | :--- | :--- | :--- |
+| `MODEL_PATH` | `/models/MiniCPM-SALA` | `--model-path` | `-e MODEL_PATH=/models/MiniCPM-SALA` |
+| `HOST` | `0.0.0.0` | `--host` | `-e HOST=0.0.0.0` |
+| `PORT` | `30000` | `--port` | `-e PORT=30000` |
+| `SGLANG_SERVER_ARGS` | `--disable-radix-cache --attention-backend minicpm_flashinfer --chunked-prefill-size 8192 --skip-server-warmup --dense-as-sparse` | 若设置则覆盖默认参数，建议单引号包裹 | `-e SGLANG_SERVER_ARGS='--disable-radix-cache ...'` |
 
 ```bash
 # 参考docker启动命令

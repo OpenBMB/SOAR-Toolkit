@@ -51,11 +51,26 @@ Model: `/models/MiniCPM-SALA`
 
 ## Container Startup Script Reference
 
-### Common docker run parameters
-*(This content cannot be displayed outside of Feishu documents temporarily)*
+### Common docker run Parameters
+
+| Parameter | Description | Example |
+| :--- | :--- | :--- |
+| `--gpus` | Select visible GPUs | `--gpus '"device=0"'` |
+| `-v <host>:<container>:ro` | Mount directory/file into the container (read-only) | `-v /path/to/MiniCPM-SALA:/models/MiniCPM-SALA:ro` |
+| `-p <host_port>:<container_port>` | Port mapping | `-p 30000:30000` |
+| `-e KEY=VALUE` | Pass environment variables (to modify startup parameters) | `-e SGLANG_SERVER_ARGS='...'` |
+| `--name <name>` | Name the container (convenient for `docker logs`) | `--name minicpm_sglang` |
+| `-d` | Run in background | `-d` |
+| `--rm` | Automatically remove container on exit | `--rm` |
 
 ### Environment Variables
-*(This content cannot be displayed outside of Feishu documents temporarily)*
+
+| Variable | Default | Meaning / Corresponds to `sglang.launch_server` | Example |
+| :--- | :--- | :--- | :--- |
+| `MODEL_PATH` | `/models/MiniCPM-SALA` | `--model-path` | `-e MODEL_PATH=/models/MiniCPM-SALA` |
+| `HOST` | `0.0.0.0` | `--host` | `-e HOST=0.0.0.0` |
+| `PORT` | `30000` | `--port` | `-e PORT=30000` |
+| `SGLANG_SERVER_ARGS` | `--disable-radix-cache --attention-backend minicpm_flashinfer --chunked-prefill-size 8192 --skip-server-warmup --dense-as-sparse` | Overrides default parameters when set; wrap with single quotes | `-e SGLANG_SERVER_ARGS='--disable-radix-cache ...'` |
 
 ```bash
 # Reference docker run command
